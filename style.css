@@ -37,3 +37,8 @@
 .flash{
     background-color: transparent;
 }
+@media(max-width:400px){
+.pdiv{
+    height: 40%;
+}
+}

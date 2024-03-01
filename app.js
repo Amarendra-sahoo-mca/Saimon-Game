@@ -5,7 +5,7 @@ let start= false;
 let level=0;
 let flag=1;
 let h3=document.querySelector("h3");
-document.addEventListener("keypress" ,function(){
+document.addEventListener("click" ,function(){
     if(start== false){
         console.log("game started");
         start=true;
@@ -18,7 +18,6 @@ function levelUp(){
     usersq=[];
     level++;
     h3.innerText=`level ${level}`;
-    // for(let i=0;i<=level;i++){
     let num=Math.floor(Math.random()*3);
     let arEl=btnarr[num];
     let rBtn=document.querySelector(`#${arEl}`);
@@ -26,7 +25,6 @@ function levelUp(){
     gamesq.push(rbId);
     console.log(gamesq);
     btnFlash(rBtn);
-    // }
 }
 function btnFlash(btn){
     btn.classList.add("flash");
@@ -54,7 +52,7 @@ function ansCheck(idx){
             }
         }
         else{
-            h3.innerHTML=`Game over!<b>Your score is ${level}</b> <br> Press any key to start`;
+            h3.innerHTML=`Game over!<b>Your score is ${level}</b> <br> click the white body to start`;
             document.querySelector("body").style.backgroundColor="red";
             setTimeout( function (){document.querySelector("body").style.backgroundColor="white";},150);
             setTimeout(reset,2000);
